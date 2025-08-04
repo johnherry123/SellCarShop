@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\CarShopMange\CarShopMange\obj\Debug\
+G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\
 CarShopMange
 none
 false
 DEBUG;TRACE
-G:\CarShopMange\CarShopMange\App.xaml
-11151548125
+G:\SellCarShop\CarShopMange\CarShopMange\App.xaml
+2-1754496724
 
-9-941292615
-621332827628
-MainWindow.xaml;
+11-1788795972
+65-1137810376
+MainWindow.xaml;UI\login.xaml;
 
-True
+False
 

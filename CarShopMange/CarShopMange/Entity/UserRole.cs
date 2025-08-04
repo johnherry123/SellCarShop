@@ -8,15 +8,16 @@ using System.Threading.Tasks;
 
 namespace CarShopMange.Entity
 {
-   
-    class UserRole
-    {
-        [Required(ErrorMessage ="User ID is required.")]
-        [ForeignKey("userID")]
-        public int userId { get; set; }
-        [Required(ErrorMessage ="Role is require")]
-        [EnumDataType(typeof(Role),ErrorMessage ="Invalid Role")]
-        public Role role { get; set; }
 
+    public class UserRole
+    {
+        [Required(ErrorMessage = "User ID is required.")]
+        [ForeignKey("userID")]
+        public int userID { get; set; }
+        [Required(ErrorMessage = "Role is require")]
+        [ForeignKey("roleID")]
+        public int roleID { get; set; }
+        public User user { get; set; }
+        public Role role { get; set; }
     }
 }
