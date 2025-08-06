@@ -103,10 +103,8 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <!-- Sidebar -->
-                <DockPanel Grid.Row="1" Grid.Column="0" x:Name="Sidebar" Background="#33FFFFFF" Width="200" Margin="10" Tag="True">
-                    <StackPanel>
-                        <!-- Toggle Button -->
+                <DockPanel Grid.Row="1" Grid.Column="0" x:Name="Sidebar" Background="#33FFFFFF" Width="200" Margin="10" Tag="True" >
+                    <StackPanel Margin="5" >
                         <Button x:Name="ToggleButton"
                                 FontFamily="Segoe MDL2 Assets"
                                 Content="Toggle"
@@ -115,12 +113,12 @@
                                 Click="ToggleSidebar_Click"
                                 ToolTip="Toggle Sidebar"/>
 
-                        <!-- Sidebar Buttons -->
-                        <Button Tag="&#xE790;" Content="Themes" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Themes"/>
-                        <Button Tag="&#xE8D2;" Content="Design Values" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Design Values"/>
-                        <Button Tag="&#xE8EF;" Content="Global Styles" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Global Styles"/>
-                        <Button Tag="&#xE8AB;" Content="Design Patterns" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Design Patterns"/>
-                        <Button Tag="&#xE7FC;" Content="Development" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Development"/>
+
+                        <Button Tag="&#xE790;" TabIndex="0" Content="Themes" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Themes"/>
+                        <Button Tag="&#xE8D2;" TabIndex="1" Content="Design Values" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Design Values"/>
+                        <Button Tag="&#xE8EF;" TabIndex="2" Content="Global Styles" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Global Styles"/>
+                        <Button Tag="&#xE8AB;" TabIndex="3" Content="Design Patterns" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Design Patterns"/>
+                        <Button Tag="&#xE7FC;" TabIndex="4" Content="Development" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Development"/>
                     </StackPanel>
                 </DockPanel>
 
@@ -140,8 +138,9 @@
                     </TabControl.Resources>
                     <TabItem>
                         <TabItem.Content>
-                            <Border Background="#66FFFFFF" CornerRadius="10" Padding="20">
-                                <TextBlock Text="Theme options shown here..."/>
+                            <Border Background="#66FFFFFF" CornerRadius="10" Padding="10">
+                                <StackPanel Background="WhiteSmoke"   >
+                                </StackPanel>
                             </Border>
                         </TabItem.Content>
                     </TabItem>

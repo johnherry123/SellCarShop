@@ -87,9 +87,28 @@ namespace CarShopMange.UI
             if (PasswordPlaceholder != null && string.IsNullOrEmpty(PasswordBox.Password))
                 PasswordPlaceholder.Visibility = Visibility.Visible;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(UsernameTextBox.Text.Trim()) || string.IsNullOrEmpty(PasswordBox.Password.Trim()))
+            {
+                string message = "Your username or password is incorrect.";
+                string caption = "Error Detected in Input";
+                MessageBoxButton button = MessageBoxButton.OK;
+                MessageBoxImage image = MessageBoxImage.Error;
+                MessageBox.Show(message, caption, button, image);
+                return;
+            }
+            if(UsernameTextBox.Text.Trim().ToLower().Equals("admin") && PasswordBox.Password.Trim().ToLower().Equals("admin"))
+            {
+                main f = new main();
+                f.ShowDialog();
+                this.Close();
+            }
+        }
     }
 
 
-    
-    
+
+
 }

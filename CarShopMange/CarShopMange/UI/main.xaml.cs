@@ -32,9 +32,9 @@ namespace CarShopMange.UI
 
         private void Sidebar_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is Button btn && int.TryParse(btn.Tag.ToString(), out int index))
+            if (sender is Button btn && int.TryParse(btn.TabIndex.ToString(), out int index))
             {
-
+                MainTabControl.SelectedIndex = index;
             }
         }
 
@@ -45,8 +45,8 @@ namespace CarShopMange.UI
             Sidebar.Width = isOpen ? 50 : 200;
             Sidebar.Tag = !isOpen;
 
-            // Cập nhật lại layout nếu cần
-            MainTabControl.Margin = new Thickness(isOpen ? 10 : 10); // Giữ khoảng cách content
+           
+            MainTabControl.Margin = new Thickness(isOpen ? 10 : 10); 
         }
 
         private void Minimize_Click(object sender, RoutedEventArgs e)
