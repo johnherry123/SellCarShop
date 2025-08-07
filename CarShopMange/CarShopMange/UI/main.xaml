@@ -3,19 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:helper="clr-namespace:CarShopMange.Helper"
         xmlns:local="clr-namespace:CarShopMange.UI"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="CarShop UI" Height="800" Width="1100"
         WindowStyle="None" ResizeMode="CanResize"
-        AllowsTransparency="True" Background="Transparent"
+        Background="Transparent"
+        AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
         MouseDown="Window_MouseDown"
         Loaded="Window_Loaded">
+
 
     <Window.Resources>
         <SolidColorBrush x:Key="PrimaryColor" Color="#A970FF"/>
         <SolidColorBrush x:Key="SidebarHover" Color="#30FFFFFF"/>
         <SolidColorBrush x:Key="SidebarSelected" Color="#80FFFFFF"/>
         <helper:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+
 
         <Style x:Key="SidebarButtonStyle" TargetType="Button">
             <Setter Property="FontFamily" Value="Segoe UI"/>
@@ -58,14 +60,15 @@
             </Setter>
         </Style>
 
+
         <Style x:Key="WindowControlButtonStyle" TargetType="Button">
             <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
-            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontSize" Value="14"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Width" Value="30"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Width" Value="35"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -84,15 +87,25 @@
         </Style>
     </Window.Resources>
 
+
     <Grid>
+
         <Grid.Background>
-            <ImageBrush ImageSource="pack://application:,,,/Resource/hinh-nen-bau-troi-binh-minh-hoang-hon-3.jpg.webp" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="pack://application:,,,/Resource/hinh-nen-bau-troi-binh-minh-hoang-hon-3.jpg.webp"
+                        Stretch="UniformToFill"/>
         </Grid.Background>
 
-        <Border x:Name="MainBorder" CornerRadius="20" Background="#30FFFFFF">
+
+        <Border x:Name="MainBorder"
+                CornerRadius="20"
+                Background="#30FFFFFF"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                >
             <Border.Effect>
-                <DropShadowEffect BlurRadius="15" ShadowDepth="0" Opacity="0.3"/>
+                <DropShadowEffect BlurRadius="25" ShadowDepth="0" Opacity="0.25"/>
             </Border.Effect>
+
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition x:Name="SidebarColumn" Width="Auto"/>
@@ -103,72 +116,161 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <DockPanel Grid.Row="1" Grid.Column="0" x:Name="Sidebar" Background="#33FFFFFF" Width="200" Margin="10" Tag="True" >
-                    <StackPanel Margin="5" >
+
+                <DockPanel Grid.Row="1" Grid.Column="0" x:Name="Sidebar"
+                           Background="#33FFFFFF" Width="200" Margin="10" Tag="True">
+                    <StackPanel Margin="5">
                         <Button x:Name="ToggleButton"
                                 FontFamily="Segoe MDL2 Assets"
-                                Content="Toggle"
+                                Content=""
                                 Tag="&#xE700;"
                                 Style="{StaticResource SidebarButtonStyle}"
                                 Click="ToggleSidebar_Click"
                                 ToolTip="Toggle Sidebar"/>
 
-
-                        <Button Tag="&#xE790;" TabIndex="0" Content="Themes" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Themes"/>
-                        <Button Tag="&#xE8D2;" TabIndex="1" Content="Design Values" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Design Values"/>
-                        <Button Tag="&#xE8EF;" TabIndex="2" Content="Global Styles" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Global Styles"/>
+                        <Button Tag="&#xE790;" TabIndex="0" Content="DashBoard" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="DashBoard"/>
+                        <Button Tag="&#xE8D2;" TabIndex="1" Content="User" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="User"/>
+                        <Button Tag="&#xE8EF;" TabIndex="2" Content="Stores" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Stores"/>
                         <Button Tag="&#xE8AB;" TabIndex="3" Content="Design Patterns" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Design Patterns"/>
                         <Button Tag="&#xE7FC;" TabIndex="4" Content="Development" Style="{StaticResource SidebarButtonStyle}" Click="Sidebar_Click" ToolTip="Development"/>
                     </StackPanel>
                 </DockPanel>
 
-                <!-- Window Control Buttons -->
+                <!-- Window control buttons -->
                 <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Margin="0,10,10,0">
                     <Button Content="&#xE921;" Style="{StaticResource WindowControlButtonStyle}" Click="Minimize_Click" ToolTip="Minimize"/>
-                    <Button Content="&#xE922;" Style="{StaticResource WindowControlButtonStyle}" Click="MaximizeRestore_Click" ToolTip="Maximize"/>
+                    <Button Content="&#xE922;" Style="{StaticResource WindowControlButtonStyle}" Click="Maximize_Click" ToolTip="Maximize"/>
                     <Button Content="&#xE8BB;" Style="{StaticResource WindowControlButtonStyle}" Click="Close_Click" ToolTip="Close"/>
                 </StackPanel>
 
-                <!-- Tab Content -->
+
                 <TabControl x:Name="MainTabControl" Grid.Row="1" Grid.Column="1" Background="Transparent" BorderThickness="0" Margin="10">
                     <TabControl.Resources>
                         <Style TargetType="TabItem">
                             <Setter Property="Visibility" Value="Collapsed"/>
                         </Style>
                     </TabControl.Resources>
+
+
                     <TabItem>
                         <TabItem.Content>
                             <Border Background="#66FFFFFF" CornerRadius="10" Padding="10">
-                                <StackPanel Background="WhiteSmoke"   >
+                                <StackPanel Background="WhiteSmoke"/>
+                            </Border>
+                        </TabItem.Content>
+                    </TabItem>
+
+                    <TabItem>
+                        <TabItem.Content>
+                            <Border Background="#66FFFFFF" CornerRadius="10" Padding="10">
+                                <StackPanel Background="WhiteSmoke"/>
+                            </Border>
+                        </TabItem.Content>
+                    </TabItem>
+                    <TabItem >
+                        <TabItem.Content>
+                            <Border Background="WhiteSmoke" CornerRadius="15" Padding="20">
+                                <StackPanel>
+
+                                    <TextBlock Text="Danh sách sản phẩm"
+                   FontSize="22"
+                   FontWeight="Bold"
+                   Foreground="#333"
+                   Margin="0,0,0,10"
+                   HorizontalAlignment="Center"/>
+
+
+                                    <TextBlock Text="Chọn những món hàng yêu thích từ cửa hàng của bạn"
+                   FontSize="14"
+                   Foreground="#777"
+                   Margin="0,0,0,20"
+                   HorizontalAlignment="Center"/>
+
+
+                                    <ScrollViewer VerticalScrollBarVisibility="Auto" Background="Transparent">
+                                        <ItemsControl ItemsSource="{Binding DanhSachSanPham}">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel HorizontalAlignment="Center" IsItemsHost="True" />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Border Width="220" Height="320" Margin="10"
+                                Background="White" CornerRadius="12"
+                                BorderBrush="#DDD" BorderThickness="1">
+                                                        <Border.Effect>
+                                                            <DropShadowEffect BlurRadius="10" ShadowDepth="1" Opacity="0.15"/>
+                                                        </Border.Effect>
+                                                        <Border.Style>
+                                                            <Style TargetType="Border">
+                                                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                                                                <Setter Property="RenderTransform">
+                                                                    <Setter.Value>
+                                                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                                                    </Setter.Value>
+                                                                </Setter>
+                                                                <Style.Triggers>
+                                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                                        <Setter Property="RenderTransform">
+                                                                            <Setter.Value>
+                                                                                <ScaleTransform ScaleX="1.02" ScaleY="1.02"/>
+                                                                            </Setter.Value>
+                                                                        </Setter>
+                                                                        <Setter Property="BorderBrush" Value="#A970FF"/>
+                                                                    </Trigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </Border.Style>
+
+                                                        <StackPanel>
+                                                            <Image Source="{Binding HinhAnh}" Height="140"
+                                       Stretch="UniformToFill" Margin="10,10,10,5"
+                                       ClipToBounds="True" />
+                                                            <TextBlock Text="{Binding Ten}" FontWeight="Bold"
+                                           FontSize="15" Margin="10,5,10,0"
+                                           TextWrapping="Wrap" Foreground="#333"/>
+                                                            <TextBlock Text="{Binding Gia}" Foreground="#C62828"
+                                           FontWeight="SemiBold" FontSize="14"
+                                           Margin="10,2,10,0"/>
+                                                            <Button Content="Thêm vào giỏ" Height="30"
+                                        Margin="10,10,10,10"
+                                        Background="#A970FF" Foreground="White"
+                                        FontWeight="SemiBold" Cursor="Hand"
+                                        BorderThickness="0">
+                                                                <Button.Template>
+                                                                    <ControlTemplate TargetType="Button">
+                                                                        <Border Background="{TemplateBinding Background}"
+                                                    CornerRadius="6">
+                                                                            <ContentPresenter HorizontalAlignment="Center"
+                                                                  VerticalAlignment="Center"/>
+                                                                        </Border>
+                                                                    </ControlTemplate>
+                                                                </Button.Template>
+                                                            </Button>
+                                                        </StackPanel>
+                                                    </Border>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </ScrollViewer>
                                 </StackPanel>
                             </Border>
                         </TabItem.Content>
                     </TabItem>
+
                     <TabItem>
                         <TabItem.Content>
-                            <Border Background="#66FFFFFF" CornerRadius="10" Padding="20">
-                                <TextBlock Text="Design Values content..."/>
+                            <Border Background="#66FFFFFF" CornerRadius="10" Padding="10">
+                                <StackPanel Background="WhiteSmoke"/>
                             </Border>
                         </TabItem.Content>
                     </TabItem>
                     <TabItem>
                         <TabItem.Content>
-                            <Border Background="#66FFFFFF" CornerRadius="10" Padding="20">
-                                <TextBlock Text="Global Styles content..."/>
-                            </Border>
-                        </TabItem.Content>
-                    </TabItem>
-                    <TabItem>
-                        <TabItem.Content>
-                            <Border Background="#66FFFFFF" CornerRadius="10" Padding="20">
-                                <TextBlock Text="Design Patterns content..."/>
-                            </Border>
-                        </TabItem.Content>
-                    </TabItem>
-                    <TabItem>
-                        <TabItem.Content>
-                            <Border Background="#66FFFFFF" CornerRadius="10" Padding="20">
-                                <TextBlock Text="Development content..."/>
+                            <Border Background="#66FFFFFF" CornerRadius="10" Padding="10">
+                                <StackPanel Background="WhiteSmoke"/>
                             </Border>
                         </TabItem.Content>
                     </TabItem>

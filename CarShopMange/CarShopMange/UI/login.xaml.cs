@@ -102,7 +102,7 @@ namespace CarShopMange.UI
             if(UsernameTextBox.Text.Trim().ToLower().Equals("admin") && PasswordBox.Password.Trim().ToLower().Equals("admin"))
             {
                 main f = new main();
-                f.ShowDialog();
+                f.Show();
                 this.Close();
             }
         }
