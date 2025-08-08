@@ -24,8 +24,11 @@ namespace CarShopMange.Entity
         public string password { get; set; }
         [Required(ErrorMessage ="User Role is required.")]
         public ICollection<UserRole> userRole { get; set; }
+        
         public DateTime entryDate { get; set; }
         [Required(ErrorMessage ="Date of bith is required.")]
         public DateTime dateofBirth { get; set; }
+        [RegularExpression(@"^\+?\d+$", ErrorMessage ="Phone number must be have id country and number.")]
+        public string phoneNumber { get; set; }
     }
 }
