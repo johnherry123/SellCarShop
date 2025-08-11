@@ -211,6 +211,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\BoolToVisibilityConverter.cs" />
+    <Compile Include="Helper\FractionWidthConverter.cs" />
     <Compile Include="UI\login.xaml.cs">
       <DependentUpon>login.xaml</DependentUpon>
     </Compile>

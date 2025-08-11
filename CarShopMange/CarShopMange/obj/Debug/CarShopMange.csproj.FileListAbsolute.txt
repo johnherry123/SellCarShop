@@ -92,8 +92,6 @@ G:\SellCarShop\CarShopMange\CarShopMange\bin\Debug\System.Runtime.CompilerServic
 G:\SellCarShop\CarShopMange\CarShopMange\bin\Debug\System.Text.Encodings.Web.xml
 G:\SellCarShop\CarShopMange\CarShopMange\bin\Debug\System.Threading.Tasks.Extensions.xml
 G:\SellCarShop\CarShopMange\CarShopMange\bin\Debug\System.ValueTuple.xml
-G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\CarShopMange.csproj.AssemblyReference.cache
-G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\UI\login.baml
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\MainWindow.g.cs
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\UI\login.g.cs
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\UI\main.g.cs
@@ -102,6 +100,7 @@ G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\GeneratedInternalTypeHelper.g
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\CarShopMange_MarkupCompile.cache
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\CarShopMange_MarkupCompile.lref
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\MainWindow.baml
+G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\UI\login.baml
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\UI\main.baml
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\CarShopMange.g.resources
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\CarShopMange.Properties.Resources.resources
@@ -110,3 +109,4 @@ G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\CarShopMange.csproj.CoreCompi
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\CarShopMange.csproj.CopyComplete
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\CarShopMange.exe
 G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\CarShopMange.pdb
+G:\SellCarShop\CarShopMange\CarShopMange\obj\Debug\CarShopMange.csproj.AssemblyReference.cache
